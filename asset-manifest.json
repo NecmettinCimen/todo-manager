@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/reacttodomanager/static/css/main.e1bf8cf2.chunk.css",
-    "main.js": "/reacttodomanager/static/js/main.817da0ef.chunk.js",
-    "main.js.map": "/reacttodomanager/static/js/main.817da0ef.chunk.js.map",
-    "runtime~main.js": "/reacttodomanager/static/js/runtime~main.83632366.js",
-    "runtime~main.js.map": "/reacttodomanager/static/js/runtime~main.83632366.js.map",
-    "static/css/2.4f58dd43.chunk.css": "/reacttodomanager/static/css/2.4f58dd43.chunk.css",
-    "static/js/2.7e06df9a.chunk.js": "/reacttodomanager/static/js/2.7e06df9a.chunk.js",
-    "static/js/2.7e06df9a.chunk.js.map": "/reacttodomanager/static/js/2.7e06df9a.chunk.js.map",
-    "index.html": "/reacttodomanager/index.html",
-    "precache-manifest.654f05ffbae0255ff117f5ecd33bcded.js": "/reacttodomanager/precache-manifest.654f05ffbae0255ff117f5ecd33bcded.js",
-    "service-worker.js": "/reacttodomanager/service-worker.js",
-    "static/css/2.4f58dd43.chunk.css.map": "/reacttodomanager/static/css/2.4f58dd43.chunk.css.map",
-    "static/css/main.e1bf8cf2.chunk.css.map": "/reacttodomanager/static/css/main.e1bf8cf2.chunk.css.map",
-    "static/media/semantic.min.css": "/reacttodomanager/static/media/outline-icons.ef60a4f6.woff",
-    "static/media/logo.svg": "/reacttodomanager/static/media/logo.5d5d9eef.svg"
+    "main.css": "/static/css/main.e1bf8cf2.chunk.css",
+    "main.js": "/static/js/main.8f0ac300.chunk.js",
+    "main.js.map": "/static/js/main.8f0ac300.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.621b5bde.chunk.css": "/static/css/2.621b5bde.chunk.css",
+    "static/js/2.113b8e65.chunk.js": "/static/js/2.113b8e65.chunk.js",
+    "static/js/2.113b8e65.chunk.js.map": "/static/js/2.113b8e65.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e251e95dd3c1543603d3348bfb4b0f56.js": "/precache-manifest.e251e95dd3c1543603d3348bfb4b0f56.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.621b5bde.chunk.css.map": "/static/css/2.621b5bde.chunk.css.map",
+    "static/css/main.e1bf8cf2.chunk.css.map": "/static/css/main.e1bf8cf2.chunk.css.map",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
   }
 }
