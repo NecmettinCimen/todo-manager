@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Header, Input, Icon, Table, Label } from "semantic-ui-react";
 import moment from "moment";
+import QRCode from 'qrcode.react'
+import QrReader from 'react-qr-reader'
 
-export default class ContainerChild extends Component {
+
+export default class Tasks extends Component {
   state = {
     todoName: "",
-    table: []
+    table: [],
+    tableStr:""
   };
   constructor(props) {
     super(props);
@@ -45,18 +49,32 @@ export default class ContainerChild extends Component {
     this.saveTable(table);
   };
   saveTable = table => {
-    this.setState({ table });
-    localStorage.setItem("table", JSON.stringify(table));
+    const tableStr = JSON.stringify(table);
+    this.setState({ table, tableStr });
+    localStorage.setItem("table", tableStr);
   };
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
+
+  handleScan = data => {
+    if (data) {
+      this.setState({
+        tableStr: data
+      })
+    }
+  }
+  handleError = err => {
+    console.error(err)
+  }
+
   render() {
-    const { todoName, table } = this.state;
+    const { todoName, table, tableStr } = this.state;
     return (
       <div>
-        <Header as="h1">React Todo Manager</Header>
+
+        <Header>Tasks</Header>
         <form onSubmit={this.onAddTodoForm}>
           <Input
             value={todoName}
@@ -89,6 +107,22 @@ export default class ContainerChild extends Component {
             ))}
           </Table.Body>
         </Table>
+        <div style={{flex:1}}>
+          <QRCode value={tableStr} 
+          style={{height:300, width:300, float:"left"}}
+          />
+          <div
+          style={{height:300, width:300, float:"right"}}
+          >
+            
+          <QrReader
+          delay={300}
+          onError={this.handleError}
+          onScan={this.handleScan}
+          style={{ width: '100%' }}
+        />
+          </div>
+          </div>
       </div>
     );
   }
