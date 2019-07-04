@@ -9,7 +9,9 @@ export default class Tasks extends Component {
   state = {
     todoName: "",
     table: [],
-    tableStr:""
+    tableStr: "",
+    qrenabled: false,
+    searchStatus: 1
   };
   constructor(props) {
     super(props);
@@ -69,13 +71,17 @@ export default class Tasks extends Component {
     console.error(err)
   }
 
+  filterTasks = (searchStatus) => {
+    this.setState({ searchStatus })
+  }
+
   render() {
-    const { todoName, table, tableStr } = this.state;
+    const { todoName, table, tableStr, qrenabled, searchStatus } = this.state;
     return (
       <div>
-
-        <Header>Tasks</Header>
-        <form onSubmit={this.onAddTodoForm}>
+        <Header><span style={{ color: searchStatus === 1 ? 'black' : '#eee', cursor: 'pointer' }} onClick={() => this.filterTasks(1)}>Tasks </span>
+          <span style={{ color: searchStatus === 2 ? 'black' : '#eee', cursor: 'pointer' }} onClick={() => this.filterTasks(2)} > Completed Task</span></Header>
+        <form autoComplete="off" onSubmit={this.onAddTodoForm}>
           <Input
             value={todoName}
             name="todoName"
@@ -95,7 +101,7 @@ export default class Tasks extends Component {
         </form>
         <Table celled>
           <Table.Body>
-            {table.map(({ name, date, status }) => (
+            {table.filter(x => x.status === searchStatus).map(({ name, date, status }) => (
               <TableRow
                 key={"row_" + date}
                 name={name}
@@ -107,22 +113,24 @@ export default class Tasks extends Component {
             ))}
           </Table.Body>
         </Table>
-        <div style={{flex:1}}>
-          <QRCode value={tableStr} 
-          style={{height:300, width:300, float:"left"}}
-          />
-          <div
-          style={{height:300, width:300, float:"right"}}
-          >
-            
-          <QrReader
-          delay={300}
-          onError={this.handleError}
-          onScan={this.handleScan}
-          style={{ width: '100%' }}
-        />
-          </div>
-          </div>
+        {
+          qrenabled ? <div style={{ flex: 1 }}>
+            <QRCode value={tableStr}
+              style={{ height: 300, width: 300, float: "left" }}
+            />
+            <div
+              style={{ height: 300, width: 300, float: "right" }}
+            >
+
+              <QrReader
+                delay={300}
+                onError={this.handleError}
+                onScan={this.handleScan}
+                style={{ width: '100%' }}
+              />
+            </div>
+          </div> : null
+        }
       </div>
     );
   }
