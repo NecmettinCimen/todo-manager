@@ -1,9 +1,27 @@
 import React, { Component } from "react";
-import { Header, Input, Icon, Table, Label } from "semantic-ui-react";
+import {
+  Header,
+  Input,
+  Icon,
+  Table,
+  Label,
+  Progress
+} from "semantic-ui-react";
 import moment from "moment";
-import QRCode from 'qrcode.react'
-import QrReader from 'react-qr-reader'
 
+const colors = [
+  'red',
+  'orange',
+  'olive',
+  'green',
+  'teal',
+  'violet',
+  'purple',
+  'pink',
+  'brown',
+  'grey',
+  'black',
+]
 
 export default class Tasks extends Component {
   state = {
@@ -11,7 +29,9 @@ export default class Tasks extends Component {
     table: [],
     tableStr: "",
     qrenabled: false,
-    searchStatus: 1
+    searchStatus: 1,
+    category: "",
+    categories: []
   };
   constructor(props) {
     super(props);
@@ -60,27 +80,33 @@ export default class Tasks extends Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleScan = data => {
-    if (data) {
-      this.setState({
-        tableStr: data
-      })
-    }
-  }
-  handleError = err => {
-    console.error(err)
-  }
-
   filterTasks = (searchStatus) => {
     this.setState({ searchStatus })
   }
 
+  onAddCategory = event => {
+    
+    event.preventDefault();
+    
+    var { categories, category } = this.state
+
+    categories.push({ name: category, color: colors[categories.length % colors.length] })
+
+    this.setState({ categories })
+  }
+
   render() {
-    const { todoName, table, tableStr, qrenabled, searchStatus } = this.state;
+    const { category, todoName, table, searchStatus,categories } = this.state;
     return (
       <div>
-        <Header><span style={{ color: searchStatus === 1 ? 'black' : '#eee', cursor: 'pointer' }} onClick={() => this.filterTasks(1)}>Tasks </span>
-          <span style={{ color: searchStatus === 2 ? 'black' : '#eee', cursor: 'pointer' }} onClick={() => this.filterTasks(2)} > Completed Task</span></Header>
+        <Progress
+          total={table.length}
+          value={table.filter(x => x.status === 2).length}
+          success active progress="ratio" />
+        <Header><span style={{ color: searchStatus === 1 ? 'black' : '#eee', cursor: 'pointer' }}
+          onClick={() => this.filterTasks(1)}>Tasks ({table.filter(x => x.status === 1).length}) </span>
+          <span style={{ color: searchStatus === 2 ? 'black' : '#eee', cursor: 'pointer' }}
+            onClick={() => this.filterTasks(2)} > Completed Task ({table.filter(x => x.status === 2).length})</span></Header>
         <form autoComplete="off" onSubmit={this.onAddTodoForm}>
           <Input
             value={todoName}
@@ -99,9 +125,23 @@ export default class Tasks extends Component {
             placeholder="Todo Name..."
           />
         </form>
+        {/* <form autoComplete="off" style={{ marginTop: 10 }} onSubmit={this.onAddCategory}>
+          <Input
+            label='Category'
+            placeholder='Category Name' value={category}
+            onChange={this.handleChange}
+            name="category" />
+        </form>
+        {categories.map(category => <Label
+          as="a"
+          basic
+          color={category.color}
+        >
+          {category.name}
+        </Label>)} */}
         <Table celled>
           <Table.Body>
-            {table.filter(x => x.status === searchStatus).map(({ name, date, status }) => (
+            {table.filter(x => x.status === searchStatus).sort((x, y) => y.date - x.date).map(({ name, date, status }) => (
               <TableRow
                 key={"row_" + date}
                 name={name}
@@ -113,24 +153,6 @@ export default class Tasks extends Component {
             ))}
           </Table.Body>
         </Table>
-        {
-          qrenabled ? <div style={{ flex: 1 }}>
-            <QRCode value={tableStr}
-              style={{ height: 300, width: 300, float: "left" }}
-            />
-            <div
-              style={{ height: 300, width: 300, float: "right" }}
-            >
-
-              <QrReader
-                delay={300}
-                onError={this.handleError}
-                onScan={this.handleScan}
-                style={{ width: '100%' }}
-              />
-            </div>
-          </div> : null
-        }
       </div>
     );
   }
