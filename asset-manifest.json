@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/reacttodomanager/static/css/main.e1bf8cf2.chunk.css",
-    "main.js": "/reacttodomanager/static/js/main.874ab014.chunk.js",
-    "main.js.map": "/reacttodomanager/static/js/main.874ab014.chunk.js.map",
+    "main.css": "/reacttodomanager/static/css/main.4f39b3b6.chunk.css",
+    "main.js": "/reacttodomanager/static/js/main.1e418da1.chunk.js",
+    "main.js.map": "/reacttodomanager/static/js/main.1e418da1.chunk.js.map",
     "runtime~main.js": "/reacttodomanager/static/js/runtime~main.83632366.js",
     "runtime~main.js.map": "/reacttodomanager/static/js/runtime~main.83632366.js.map",
-    "static/css/2.4f58dd43.chunk.css": "/reacttodomanager/static/css/2.4f58dd43.chunk.css",
-    "static/js/2.fec7b7c5.chunk.js": "/reacttodomanager/static/js/2.fec7b7c5.chunk.js",
-    "static/js/2.fec7b7c5.chunk.js.map": "/reacttodomanager/static/js/2.fec7b7c5.chunk.js.map",
+    "static/css/2.5d95d564.chunk.css": "/reacttodomanager/static/css/2.5d95d564.chunk.css",
+    "static/js/2.002a9e9f.chunk.js": "/reacttodomanager/static/js/2.002a9e9f.chunk.js",
+    "static/js/2.002a9e9f.chunk.js.map": "/reacttodomanager/static/js/2.002a9e9f.chunk.js.map",
     "index.html": "/reacttodomanager/index.html",
-    "precache-manifest.94dd24af1a610b709540f60abf9c345a.js": "/reacttodomanager/precache-manifest.94dd24af1a610b709540f60abf9c345a.js",
+    "precache-manifest.1fff67d1029b173fe87657f5b06e0c93.js": "/reacttodomanager/precache-manifest.1fff67d1029b173fe87657f5b06e0c93.js",
     "service-worker.js": "/reacttodomanager/service-worker.js",
-    "static/css/2.4f58dd43.chunk.css.map": "/reacttodomanager/static/css/2.4f58dd43.chunk.css.map",
-    "static/css/main.e1bf8cf2.chunk.css.map": "/reacttodomanager/static/css/main.e1bf8cf2.chunk.css.map",
+    "static/css/2.5d95d564.chunk.css.map": "/reacttodomanager/static/css/2.5d95d564.chunk.css.map",
+    "static/css/main.4f39b3b6.chunk.css.map": "/reacttodomanager/static/css/main.4f39b3b6.chunk.css.map",
     "static/media/semantic.min.css": "/reacttodomanager/static/media/outline-icons.ef60a4f6.woff",
-    "static/media/logo.svg": "/reacttodomanager/static/media/logo.5d5d9eef.svg"
+    "static/media/logo.svg": "/reacttodomanager/static/media/logo.ee7cd8ed.svg"
   }
 }
