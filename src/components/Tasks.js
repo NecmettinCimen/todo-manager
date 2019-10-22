@@ -8,6 +8,7 @@ import {
   Progress
 } from "semantic-ui-react";
 import moment from "moment";
+import ReactNotifications from 'react-browser-notifications';
 
 const colors = [
   'red',
@@ -43,7 +44,26 @@ export default class Tasks extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.onRemoveTodo = this.onRemoveTodo.bind(this);
     this.onUpdateTodo = this.onUpdateTodo.bind(this);
+
+    this.showNotifications = this.showNotifications.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
+  componentDidMount() {
+    this.showNotifications();
+  }
+  showNotifications() {
+    if (this.n.supported()) this.n.show();
+  }
+
+  handleClick(event) {
+    // Do something here such as
+    // console.log("Notification Clicked") OR
+    // window.focus() OR
+    // window.open("http://www.google.com")
+
+    this.n.close(event.target.tag);
+  }
+
   onAddTodoForm = event => {
     event.preventDefault();
     this.onAddTodo();
@@ -85,9 +105,9 @@ export default class Tasks extends Component {
   }
 
   onAddCategory = event => {
-    
+
     event.preventDefault();
-    
+
     var { categories, category } = this.state
 
     categories.push({ name: category, color: colors[categories.length % colors.length] })
@@ -96,9 +116,18 @@ export default class Tasks extends Component {
   }
 
   render() {
-    const { category, todoName, table, searchStatus,categories } = this.state;
+    const { category, todoName, table, searchStatus, categories } = this.state;
     return (
       <div>
+        <ReactNotifications
+          onRef={ref => (this.n = ref)} // Required
+          title={table.filter(x => x.status === searchStatus).length+ " Tasks !"} // Required
+          body={moment('2019-12-01').fromNow().toLocaleUpperCase()}
+          icon="icon.png"
+          tag="abcdef"
+          timeout="5000"
+          onClick={event => this.handleClick(event)}
+        />
         <Progress
           total={table.length}
           value={table.filter(x => x.status === 2).length}

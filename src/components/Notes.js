@@ -9,6 +9,7 @@ import {
   Header
 } from "semantic-ui-react";
 import moment from "moment";
+import ReactNotifications from 'react-browser-notifications';
 
 export default class Notes extends Component {
   state = {
@@ -25,7 +26,29 @@ export default class Notes extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.onRemoveTodo = this.onRemoveTodo.bind(this);
     this.onUpdateTodo = this.onUpdateTodo.bind(this);
+    
+    this.showNotifications = this.showNotifications.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
+ componentDidMount(){
+   this.showNotifications();
+ }
+  showNotifications() {
+    // If the Notifications API is supported by the browser
+    // then show the notification
+    if(this.n.supported()) this.n.show();
+  }
+ 
+  handleClick(event) {
+    // Do something here such as
+    // console.log("Notification Clicked") OR
+    // window.focus() OR
+    // window.open("http://www.google.com")
+ 
+    // Lastly, Close the notification
+    this.n.close(event.target.tag);
+  }
+
   onAddTodoForm = event => {
     event.preventDefault();
     this.onAddTodo();
@@ -97,6 +120,16 @@ export default class Notes extends Component {
             ))}
           </Table.Body>
         </Table>
+        <ReactNotifications
+          onRef={ref => (this.n = ref)} // Required
+          title="Hey There!" // Required
+          body="This is the body"
+          icon="icon.png"
+          tag="abcdef"
+          timeout="2000"
+          onClick={event => this.handleClick(event)}
+        />
+ 
       </div>
     );
   }

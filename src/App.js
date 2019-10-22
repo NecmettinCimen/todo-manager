@@ -11,6 +11,9 @@ import Tasks from "./components/Tasks";
 import Notes from "./components/Notes";
 
 export default class App extends Component {
+  componentDidMount(){
+    document.title="React Todo Manager"
+  }
   state = {
     page: "tasks"
   };
