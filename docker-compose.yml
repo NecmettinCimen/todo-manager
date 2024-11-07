@@ -1,0 +1,15 @@
+version: '1.0'
+
+services:
+  todo-manager:
+    container_name: todo-manager
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8087:80
+
+networks:
+  default:
+      name: srvnecmettin

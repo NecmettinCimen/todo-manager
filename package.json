@@ -2,7 +2,6 @@
   "name": "rtm",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://necmettincimen.github.io/reacttodomanager",
   "dependencies": {
     "moment": "^2.24.0",
     "qrcode.react": "^0.9.3",
@@ -16,8 +15,8 @@
     "semantic-ui-react": "^0.87.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
