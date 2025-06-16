@@ -68,7 +68,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 
 | WEB | 
 | --- | 
-| [![WEB](kodluyoruz-hackaton.png)](kodluyoruz-hackaton.png)
+| [![WEB](react-todo.png)](react-todo.png)
 
 ### Built With
 
