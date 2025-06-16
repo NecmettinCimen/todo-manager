@@ -2,6 +2,7 @@
   "name": "rtm",
   "version": "0.1.0",
   "private": false,
+  "homepage": "http://necmettincimen.github.io/todo-manager",
   "dependencies": {
     "moment": "^2.24.0",
     "qrcode.react": "^0.9.3",
@@ -38,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "webpack": "^4.29.6"
   }
 }

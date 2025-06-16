@@ -60,14 +60,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-todo-manager App .Net Core 2.2
+todo-manager App
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
+
+## Demo https://necmettincimen.github.io/todo-manager
+
+| WEB | 
+| --- | 
+| [![WEB](kodluyoruz-hackaton.png)](kodluyoruz-hackaton.png)
 
 ### Built With
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [.Net Core](https://dotnet.microsoft.com/)
+* [React](https://react.dev/)
 
 
 <!-- GETTING STARTED -->
@@ -79,7 +85,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-https://dotnet.microsoft.com/download/dotnet/2.1
+https://react.dev/
 
 ### Installation
 
@@ -93,7 +99,7 @@ https://dotnet.microsoft.com/download/dotnet/2.1
    ```
 3. Run Project
    ```sh
-   dotnet build
+   npm start
    ```
 
 ### Publish & Release 
@@ -108,7 +114,7 @@ https://dotnet.microsoft.com/download/dotnet/2.1
    ```
 2. Publish
    ```sh
-    dotnet publish -c Release
+    npm run build
    ```
 
 
@@ -143,7 +149,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@Necmettin Cimen](https://necmettin.me) - [mail@necmettin.me](mailto:mail@necmettin.me)
+Necmettin Çimen - [@Necmettin Cimen](https://necmettincimen.github.io) - [necmettin.dev@gmail.com](mailto:necmettin.dev@gmail.com)
 
 Project Link: [https://github.com/necmettincimen/todo-manager](https://github.com/necmettincimen/todo-manager)
 
@@ -151,7 +157,7 @@ Project Link: [https://github.com/necmettincimen/todo-manager](https://github.co
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [.Net Core](https://dotnet.microsoft.com/)
+* [React](https://dotnet.microsoft.com/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
