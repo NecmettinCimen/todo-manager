@@ -1,4 +1,3 @@
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -13,7 +12,7 @@
   <h3 align="center">Todo Manager App</h3>
 
   <p align="center">
-    Todo Manager App
+    Todo list application - Advanced features with QR codes, speech recognition, and notifications
     <br />
     <a href="https://github.com/necmettincimen/todo-manager"><strong>Explore the docs »</strong></a>
     <br />
@@ -60,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-todo-manager App
+Todo list application - Advanced features with QR codes, speech recognition, and notifications
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
@@ -71,6 +70,8 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 | [![WEB](react-todo.png)](react-todo.png)
 
 ### Built With
+
+**Technologies:** `react` `semanticui` `qrcode` `speechrecognition` `notifications` `githubpages`
 
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [React](https://react.dev/)
